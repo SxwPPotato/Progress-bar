@@ -33,18 +33,6 @@ void progress(int number) {
 }
 
 
-void task2(int count_thread) {
-	std::thread* t = new std::thread[count_thread];
-	for (size_t i = 0; i < count_thread; i++) {
-		t[i] = std::thread(progress, i);
-	}
-	for (size_t i = 0; i < count_thread; i++) {
-		t[i].join();
-	}
-	consol_parameter::SetPosition(0, count_thread);
-}
-
-
 int main()
 {
 	setlocale(LC_ALL, "russian");
